@@ -1,5 +1,5 @@
 import { computerThrow } from './computerThrow.js';
-import { playerSelection } from './computerThrow.js';
+import { checkResult } from './computerThrow.js';
 
 //Get DOM elements
 const playButton = document.getElementById('play-button');
@@ -9,6 +9,7 @@ const drawsSpan = document.getElementById('draws');
 const computerNumber = Math.ceil(Math.random() * 3);
 const computerThrowSection = document.getElementById('computer');
 const result = document.getElementById('result');
+const resetButton = document.getElementById('reset-button');
 
 //Initilize state
 let wins = 0;
@@ -23,11 +24,21 @@ playButton.addEventListener('click', () => {
 //Generates computer's hand
     const compThrow = computerThrow(computerNumber);
 //How to pick a winner in a given throw(game)
-    const result = ()
+    checkResult(); 
+    //Display result of game
+    winsSpan.textContent = wins;
+    lossesSpan.textContent = losses;
+    drawsSpan.textContent = draws;
 });
 
-//Display result of game
-
-//Update wins, losses, draws
-
 //STRETCH to add event listner to restart game
+resetButton.addEventListener('click', () => {
+    wins = 0;
+    losses = 0;
+    draws = 0;
+
+    // update view
+    winsSpan.textContent = '';
+    lossesSpan.textContent = '';
+    drawsSpan.textContent = '';  
+});
