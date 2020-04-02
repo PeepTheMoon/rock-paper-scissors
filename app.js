@@ -7,7 +7,7 @@ const winsSpan = document.getElementById('wins');
 const lossesSpan = document.getElementById('losses');
 const drawsSpan = document.getElementById('draws');
 const computerNumber = Math.ceil(Math.random() * 3);
-const computerThrowSection = document.getElementById('computer');
+const computerSpan = document.getElementById('computer');
 const result = document.getElementById('result');
 const resetButton = document.getElementById('reset-button');
 
@@ -24,8 +24,9 @@ playButton.addEventListener('click', () => {
 //Generates computer's hand
     const compThrow = computerThrow(computerNumber);
 //How to pick a winner in a given throw(game)
-    checkResult(); 
+    checkResult(compThrow, playerSelection); 
     //Display result of game
+    computerSpan.textContent = compThrow;
     winsSpan.textContent = wins;
     lossesSpan.textContent = losses;
     drawsSpan.textContent = draws;
@@ -38,7 +39,8 @@ resetButton.addEventListener('click', () => {
     draws = 0;
 
     // update view
-    winsSpan.textContent = '';
-    lossesSpan.textContent = '';
-    drawsSpan.textContent = '';  
+    computerSpan.textContent = ''; 
+    //winsSpan.textContent = '';
+    //lossesSpan.textContent = '';
+    //drawsSpan.textContent = ''; 
 });

@@ -9,7 +9,6 @@ export function computerThrow(computerNumber) {
         return 'scissors';
     }
 }
-
 //Initilize state
 let wins = 0;
 let losses = 0;
@@ -23,7 +22,7 @@ export function checkResult(hand, computerHand) {
     } 
     if (computerHand === 'rock' && hand === 'paper') {
         return 'Paper covers Rock- You win!', wins++;
-    } 
+    }
     if (computerHand === 'rock' && hand === 'scissors') {
         return 'Rock crushes Scissors- You lose!', losses++;
     }
