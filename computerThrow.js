@@ -9,33 +9,29 @@ export function computerThrow(computerNumber) {
         return 'scissors';
     }
 }
-//Initilize state
-let wins = 0;
-let losses = 0;
-let draws = 0;
 
 //Check winner, update wins, losses, draws
 
-export function checkResult(hand, computerHand) {
+export function checkResult(computerHand, hand) {
     if (computerHand === hand) {
-        return 'Draw!', draws++;
+        return 'Draw!';
     } 
     if (computerHand === 'rock' && hand === 'paper') {
-        return 'Paper covers Rock- You win!', wins++;
+        return 'Paper covers Rock- You win!';
     }
     if (computerHand === 'rock' && hand === 'scissors') {
-        return 'Rock crushes Scissors- You lose!', losses++;
+        return 'Rock crushes Scissors- You lose!';
     }
     if (computerHand === 'paper' && hand === 'scissors') {
-        return 'Scissors cuts Paper- You win!', wins++;
+        return 'Scissors cuts Paper- You win!';
     }
     if (computerHand === 'paper' && hand === 'rock') {
-        return 'Paper covers Rock- You lose!', losses++;
+        return 'Paper covers Rock- You lose!';
     }
     if (computerHand === 'scissors' && hand === 'paper') {
-        return 'Scissors cuts paper- You lose!', losses++;
+        return 'Scissors cuts paper- You lose!';
     }
-    if (computerHand === 'scissors' && hand === 'rock') {
-        return 'Rock crushes Scissors- You win', wins++;
+    else if (computerHand === 'scissors' && hand === 'rock') {
+        return 'Rock crushes Scissors- You win';
     }
 }

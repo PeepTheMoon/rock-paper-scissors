@@ -6,9 +6,8 @@ const playButton = document.getElementById('play-button');
 const winsSpan = document.getElementById('wins');
 const lossesSpan = document.getElementById('losses');
 const drawsSpan = document.getElementById('draws');
-const computerNumber = Math.ceil(Math.random() * 3);
 const computerSpan = document.getElementById('computer');
-const result = document.getElementById('result');
+const resultSpan = document.getElementById('result');
 const resetButton = document.getElementById('reset-button');
 
 //Initilize state
@@ -21,15 +20,19 @@ playButton.addEventListener('click', () => {
 //Go get user choice from radio button
     const radioSelection = document.querySelector('input[type=radio]:checked');
     let playerSelection = radioSelection.value;
+    const computerNumber = Math.ceil(Math.random() * 3);
 //Generates computer's hand
     const compThrow = computerThrow(computerNumber);
 //How to pick a winner in a given throw(game)
-    checkResult(compThrow, playerSelection); 
+    const gameResult = checkResult(compThrow, playerSelection); 
     //Display result of game
     computerSpan.textContent = compThrow;
     winsSpan.textContent = wins;
     lossesSpan.textContent = losses;
     drawsSpan.textContent = draws;
+    resultSpan.textContent = gameResult;
+
+    
 });
 
 //STRETCH to add event listner to restart game
