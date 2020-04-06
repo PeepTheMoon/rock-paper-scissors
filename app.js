@@ -1,5 +1,6 @@
-import { computerThrow } from './computerThrow.js';
-import { checkResult } from './computerThrow.js';
+import { getRandomThrow } from './getRandomThrow.js';
+import { checkResult } from './getRandomThrow.js';
+//import { recordedWins } from './getRandomThrow.js';
 
 //Get DOM elements
 const playButton = document.getElementById('play-button');
@@ -22,7 +23,7 @@ playButton.addEventListener('click', () => {
     let playerSelection = radioSelection.value;
     const computerNumber = Math.ceil(Math.random() * 3);
 //Generates computer's hand
-    const compThrow = computerThrow(computerNumber);
+    const compThrow = getRandomThrow(computerNumber);
 //How to pick a winner in a given throw(game)
     const gameResult = checkResult(compThrow, playerSelection); 
     //Display result of game
@@ -31,8 +32,6 @@ playButton.addEventListener('click', () => {
     lossesSpan.textContent = losses;
     drawsSpan.textContent = draws;
     resultSpan.textContent = gameResult;
-
-    
 });
 
 //STRETCH to add event listner to restart game

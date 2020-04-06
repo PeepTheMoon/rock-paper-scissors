@@ -1,5 +1,5 @@
 //Generate a random throw for the computer
-export function computerThrow(computerNumber) {
+export function getRandomThrow(computerNumber) {
     if (computerNumber === 1) {
         return 'rock';
     } 
@@ -32,6 +32,30 @@ export function checkResult(computerHand, hand) {
         return 'Scissors cuts paper- You lose!';
     }
     else if (computerHand === 'scissors' && hand === 'rock') {
-        return 'Rock crushes Scissors- You win';
+        return 'Rock crushes Scissors- You win!';
     }
 }
+
+// export function gameResult(computerHand, hand) {
+//     if (computerHand === hand) {
+//         draws++;
+//     } 
+//     if (computerHand === 'rock' && hand === 'paper') {
+//         wins++;
+//     }
+//     if (computerHand === 'rock' && hand === 'scissors') {
+//         losses++;
+//     }
+//     if (computerHand === 'paper' && hand === 'scissors') {
+//         wins++;
+//     }
+//     if (computerHand === 'paper' && hand === 'rock') {
+//         losses++;
+//     }
+//     if (computerHand === 'scissors' && hand === 'paper') {
+//         losses++;
+//     }
+//     else if (computerHand === 'scissors' && hand === 'rock') {
+//         wins++;
+//     }
+// }
