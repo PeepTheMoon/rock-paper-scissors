@@ -1,12 +1,18 @@
 body {
     background-color: cornflowerblue;
+    text-align: center;
+}
+
+#scissors {
+    height: 200px;
+    width: 150px;
+    padding-left: 40px;
+    padding-bottom: 10px;
 }
 
 #pick-your-hand {
-    background-color: cornflowerblue;
+    text-align: center;
+    background-color: white;
+    margin-left: 200px;
+    margin-right: 200px;
 }
-
-label {
-    background-color: cornflowerblue;
-}
-

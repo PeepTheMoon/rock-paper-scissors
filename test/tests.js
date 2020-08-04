@@ -1,1 +1,1 @@
-import './computerThrow.test.js';
+import './getRandomThrow.test.js';
